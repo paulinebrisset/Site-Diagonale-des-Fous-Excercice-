@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="fr">
+   
+	<head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1.0, user-scalable=no"/>
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <link rel="icon" href="./assets/img//logos/logo.webp">
+      <title>Grand raid - Suivre la course</title>
+      <!--link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/jumbotron/"> -->
+            <!--LEAFLET-->
+      <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.css" />
+      <!-- Bootstrap core CSS -->
+      <link href="./dist/css/bootstrap.min.css" rel="stylesheet">
+      <!-- Mes styles -->
+      <link rel="stylesheet" href="./CSS/style.css" >
+      <link rel="stylesheet" href="./CSS/small-style.css" >
+   </head>
+	
+   <body>
+      <nav id="barrenavigation" class="barrenavigation navbar navbar-expand-md navbar-dark fixed-top">
+         <a class="navbar-brand" href="#top-page" id="motMenu">Menu</a>
+         <a class="navbar-brand" href="#top-page"><img src="assets/img/logos/logo.webp" alt="logo du grand Raid" id="logo" /></a>
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
+               <li class="nav-item active">
+                  <a class="nav-link" href="#top-page">Accueil<span class="sr-only">(current)</span></a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="#courses">Présentation des courses</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="#parcours">Parcours du Trail de Bourbon</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="#tetesDeCourse">Voir les têtes de course</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="#infosAsso">Connaître l'association</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="#contact">Contact</a>
+               </li>
+            </ul>
+         </div>
+      </nav>
+		
+      <header id="top-page">
+         <!-- Main jumbotron for a primary marketing message or call to action -->
+         <div class="jumbotron">
+            <div class="container">
+               <div class="trouvide"></div>
+               <h1 class="text-uppercase">Top départ !</h1>
+               <p id="slogan">Des courses intensément réunionnaises, dans votre poche et en direct</p>
+               <div class="boutonsAcces">
+                  <div class="container">
+                      <a class="btn btn-outline-warning btn-xl text-uppercase btnHeader" href="#parcours">Parcours du Trail de Bourbon</a>
+                      <a class="btn btn-outline-warning btn-xl text-uppercase btnHeader" href="#tetesDeCourse">Têtes de course</a>
+                      <a class="btn btn-outline-warning btn-xl text-uppercase btnHeader" href="#infosAsso">L'association</a>
+                      <a class="btn btn-outline-warning btn-xl text-uppercase btnHeader" href="#contact">Contact</a>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </header>
+      <main role="main">
+         <!------------------CARDS COURSES--------------------->
+         <section class="container rubrique" id="courses">
+            <div class="row">
+               <div class="col-12">
+                  <h2>Quatre courses mythiques</h2>
+               </div>
+            </div>
+            <div class="row quatrecards">
+               <div class="card col-12 col-sm-5 col-md-5 col-lg" id="carddiagonaleDesFous">
+                  <h6>L'indomptable</h6>
+                  <h3>La Diagonale des Fous</h3>
+                  <img src="./assets/img/photos/course_nuit.jpg" alt="Photo de l'arrivée de la course" class="photocard">
+                  <p>Avec ses 162 kilomètres et 9576 m de dénivelé positif, cette course est la plus difficile du monde. Chaque année, 1350 fous viennent y trouver la gloire et de beaux mollets d'acier.</p>
+                 <button type="button" class="btn btn-outline-warning bouton boutonCard" id="btnespdiagdesfous">En savoir plus</button>
+               </div>
+               <div class="card col-12 col-sm-5 col-md-5 col-lg" id="cardtraildebourbon">
+                  <h6>L'audacieux</h6>
+                  <h3>Le trail de Bourbon</h3>
+                  <img src="./assets/img/photos/photo-arrivee-calin.png" alt="Photo de course de nuit" class="photocard">
+                  <p>Cet ultra-trail totalise plus 110 km de longueur et plus de 6 400 m de dénivelé positif. Au menu de cette course: boue, sueur, larmes, bagarre, honneur et cuisses velues.</p>
+                  <button type="button" class="btn btn-outline-warning bouton boutonCard" id="btncardtraildebourbon"><a href="#parcours">En savoir plus</a></button>
+               </div>
+               <div class="card col-12 col-sm-5 col-md-5 col-lg" id="cardlamascareignes">
+                  <h6>La subtile</h6>
+                  <h3>La Mascareignes</h3>
+                  <img src="./assets/img/photos/couple.jpg" alt="Photo d'un sportif heureux" class="photocard">
+                  <p>3900m de dénivelé positif sont lovés entre ses 72 kilomètres de sentier, traversant le cirque de Mafate. Le record est sûrement détenu par un Breton. Le lui volerez-vous ? </p>
+                  <button type="button" class="btn btn-outline-warning bouton boutonCard" id="btncardlamascareignes">En savoir plus</button>
+               </div>
+               <div class="card col-12 col-sm-5 col-md-5 col-lg" id="cardlezembrocal">
+                  <h6>Le mijauré</h6>
+                  <h3>Le Zembrocal Trail</h3>
+                  <img src="./assets/img/photos/illucard2.webp" alt="Photo d'un couple sportif" class="photocard">
+                  <p>Plus connu sous le nom affecteux de "course des petites fiottes qui ont peur de faire avancer leur deux jambes tout seuls", ce parcours s'effectue en relais, sur 173 kilomètres.</p>
+                  <button type="button" class="btn btn-outline-warning bouton boutonCard" id="btncardlezembrocal">En savoir plus</button>
+               </div>
+            </div>
+            <span id="parcours"></span>
+
+         </section> 
+         <!-------------------Parcours Tete Bourbon---------------------------------->
+         <section class="container-fluid rubrique">
+            <div class="row">
+               <div class="col-12">
+                  <h2 class="text-uppercase">Le parcours du Trail de Bourbon</h2>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-12 col-md-3 boutonscontroles" id="illustrationParcours">
+                  <button type="button" class="btn btn-outline-dark bouton btn-block gras" id="btnControles">Montrer les points de contrôle</button>
+                  <button type="button" class="btn btn-outline-dark bouton btn-block gras" id="btnMontrerMedecins">Montrer les médecins</button>
+                  <button type="button" class="btn btn-outline-dark bouton btn-block gras" id="btnMontrerSoupe">Montrer les soupes</button>
+                  <button type="button" class="btn btn-outline-dark bouton btn-block gras" id="btnMontrerSecours">Montrer les secours</button>
+                  <button type="button" class="btn btn-outline-danger bouton btn-block gras" id="btnViderLaCarte">Vider la carte</button>
+                  <button type="button" class="btn btn-outline-dark bouton btn-block gras" id="btnListeEcriteControles">Lister les contrôles</button>
+                  <button type="button" class="btn btn-outline-danger bouton btn-block gras elementCache" id="btnReplierListeControles">Replier la liste</button>
+                  
+                  
+               </div>
+               <div class="col-12 col-md carte" id="emplacementCarteControles">
+                     <!--CARTE DES POINTS DE CONTROLE-->
+               </div>
+            </div>
+        
+         </section>
+         <section class="container-fluid elementCache" id="bgcontroles">
+            <div class="row" id="listeEcriteControles">
+               <!--Insertion de la liste des points de controle via JS-->
+            </div>
+         </section>
+         <!-----------------------------CARTE DES TETES DE COURSES ------------------------------->
+         <section class="container-fluid rubrique" id="tetesDeCourse">
+            <div class="row">
+               <div class="col-12">
+                  <h2 class="text-uppercase">Ils sont en tête!</h2>
+               </div>
+            </div>
+            <div class="row" id="courreursEnTete">
+               
+                  <!---INSERTION DES DONNEES VIA JAVASCRIPT troisPremiersCourreurs-->
+               
+            </div>
+            <div class="row">
+               <div class="col-12 carte" id="emplacementCarteCoureurs">
+                  <!---Carte des trois premiers-->
+               </div> 
+            </div>   
+            <span id="infosAsso"></span>  
+         </section>
+         <!-----------------------INFOS ASSO ------------------->
+         <section class="container rubrique">
+            <div class="row">
+               <div class="col-12">
+                  <h2>Qui sommes-nous ?</h2>
+               </div>
+            </div>
+            <div class="thumbnail"> 
+               <div class="row"><!--pour habiller image avec txt-->
+                  <div class="image col-12 col-sm-3" id="photoIllustration1"> </div>
+                  <div class="image col-12 col-sm-5" id="photoIllustration2"> </div>
+                  <div class="image col-12 col-sm-3" id="photoIllustration3"> </div>
+                  <p id="caption">Des héros. Des combatifs. Des bénévoles.<p/>
+                  <!-- <div class="image" id="photoIllustration4"> </div> -->
+               </div>
+            </div>
+            <div class="row"  id="textepresentation">
+               <p>                  
+                  <b>Article 1 : Organisation</b><br><br>
+                     L’association Grand Raid est une association de loi 1901) organise à l’île de la Réunion le Grand Raid communément appelé́ « La Diagonale des Fous », Le Trail de Bourbon, La Mascareignes et le « Zembrocal Trail ».                     
+                     <br><br><b>Article 2 : Définition des épreuves</b><br>                     
+                     <br>A) La Diagonale des Fous est un Ultra Trail en semi-autonomie, traversant du Sud au Nord l’île de la Réunion
+                     Pour participer, les concurrents doivent justifier d’avoir terminé lors d’une période précisée par des conditions particulières (disponibles sur le site internet de l’association) deux courses entièrement pédestres, en une seule étape, attribuant chacune au moins 85 points, ceci en considérant le décompte suivant : 1km =1pt et 100m de D+ =1pt.-(par exemple un trail de 60km de long et de 2500D+ vaut 60+25=85 points)                     
+                     <br>B) Le Trail de Bourbon est un Ultra Trail en semi-autonomie.
+                     Pour participer, les concurrents doivent justifier d’avoir terminé lors d’une période précisée par des conditions particulières (disponibles sur le site internet de l’association) une course entièrement pédestre, en une seule étape, attribuant au moins 75 points selon le décompte suivant : 1km =1pt et 100m de D+ =1pt.-(par exemple un trail de 50km de long et de 2500D+ vaut 50+25=75 points)                     
+                     <br>C) La Mascareignes est un Trail en semi-autonomie.                     
+                     Ces épreuves se déroulent en une seule étape au rythme de chacun, prenant en compte les barrières horaires figurant dans le carnet de route et disponibles en ligne.                     
+                     <br>D) Le Zembrocal Trail est un relais Trail en semi-autonomie.
+                     Chaque équipe est composée de 4 relayeurs.                     
+                     Le temps maximal de chaque épreuve est précisé dans un tableau de barrières horaires disponible en ligne et figurant dans le carnet de route. Les concurrents ne seront plus classés au-delà̀ de ces délais car hors course. Ils ne pourront prétendre bénéficier de l’assistance mise en place par l’Organisation, laquelle décline toute responsabilité́ pour les conséquences qui pourraient en découler.                     
+                     <br><br><b>Article 3 : Conditions Générales</b><br><br>
+                     Tous les concurrents s’engagent à se soumettre sans réserve à ce règlement par le seul fait de leur inscription et dégagent la responsabilité́ des organisateurs pour tout incident ou accident pouvant survenir du fait du non-respect de celui-ci.
+               </p> 
+            </div>
+         </section>
+         <!----------------------CONTACT----------------------->
+        
+      </main>      
+		<footer class="container-fluid rubrique" id="piedepage">
+         <section class="container-fluid" id="contact">
+            <h2>Contact</h2>
+            <h3>Association Le Grand Raid</h3>
+            <p>168 rue du Général de Gaulle - 97400 St. DENIS (France)
+               <br>Tel : 02 62 20 32 00 - fax : 02 62 94 19 20
+               <br>Tel : +262 262 20 32 00 - fax : +262 262 94 19 20 (depuis hors de France)
+               <br>Email : <a href="mailto:info@grandraid-reunion.com">
+               info@grandraid-reunion.com</a>
+               <br><a href="mailto:inscriptions@grandraid-reunion.com">
+               inscriptions@grandraid-reunion.com</a></p>
+            <h3>Nous retrouver sur les réseaux</h3>
+            <a href="https://www.facebook.com/grandraidreunion/">
+            <img src="./assets/img/logos/facebook.png" alt="Logo de Facebook" class="icones"></a>
+            <a href="https://twitter.com/raid_grand">
+            <img src="./assets/img/logos/twitter.png" alt="Logo de Twitter" class="icones"></a>
+            <a href="https://www.instagram.com/grandraidreunion/?hl=fr">
+            <img src="./assets/img/logos/instagram.png" alt="Logo de Facebook" class="icones"></a>
+         </section> 
+         <section>
+
+         
+         <p>Espace presse - Mentions légales - Organisation</p>
+         <p>Tous droits réservés © Grand Raid 2021
+         Site web réalisé par Pauline</p>
+      </section>
+      </footer>
+      
+		<!-- Bootstrap core JavaScript ================================================== -->
+      <!-- Placed at the end of the document so the pages load faster -->
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+      <script>window.jQuery || document.write('<script src="./assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+      <!-- <script src="./assets/js/vendor/popper.min.js"></script> -->
+      <script src="./dist/js/bootstrap.min.js"></script>
+      <!--LEAFLET-->
+      <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-gpx/1.7.0/gpx.min.js"></script>
+      <!--Mes JavaScript-->
+      
+      <script type="text/javascript" src="./Scripts/cartePointsControles.js"></script>
+      <script type="text/javascript" src="./Scripts/affichages.js"></script>
+      <script type="text/javascript" src="./Scripts/premiersCourreurs.js"></script>
+
+   </body>
+</html>
