@@ -1,0 +1,16 @@
+DONE 
+Le site correspond globalement au cahier des charges, pour qu’il y réponde parfaitement il reste à automatiser l’actualisation des têtes de courses. Pour l’instant, il faudrait recharger la page à chaque fois pour pouvoir suivre les coureurs. 
+
+Je suis partie sur l’idée d’un one page, en me basant sur le template “Jumbotron” de Boostrap.
+
+Je n’ai pas vraiment compris ce que “rendre le JS indépendant du look” voulait dire. Mon JS réagit à des boutons positionnés sur l’interface, il prévoit le look des données qu’il publie en même temps qu’il les publie, et il prévoit des changements de présentation de l’interface (par exemple, la barre de navigation qui change de couleur en fonction du scroll).
+TODO  
+
+En terme d’esthétique j’ai beaucoup de finitions à faire :
+régler todo peaufiner l'arrivée sur les section (la barre de navigation cache parfois le titre de la section, des fois j’ai pu le régler de manière pas très légale)
+améliorer la lisibilité du pied de page
+essayer d’afficher les icônes sur la carte différemment (en zoomant dessus, par exemple)
+la photo du header est très “élastique”, elle a tendance à s’étirer quand on scrolle vers le bas, et je ne sais pas pourquoi
+
+En termes de technique, j’aimerais pouvoir davantage optimiser le code (par exemple “masquer” simplement des éléments qui ont déjà été chargés quand l’utilisateur veut les cacher, plutôt que de les supprimer purement et simplement pour les charger à nouveau s’il veut les revoir). 
+Il y a aussi l’histoire de la trace GPS, j’ai réussi à l’intégrer et c’est “stable”, mais je n’ai pas assez de maîtrise dessus pour qu’on me pose des questions le jour de l’évaluation. 

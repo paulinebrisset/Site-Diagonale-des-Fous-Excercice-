@@ -1,0 +1,30 @@
+@media screen and (max-width: 767px) {
+  #motMenu {
+    display: none;
+  }
+
+  #illustrationParcours {
+    background: none;
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .jumbotron {
+    font-size: 1.5rem;
+  }
+  h1 {
+    font-size: 3rem;
+  }
+  #photoIllustration {
+    background: url("../assets/img/photos/champion.jpg");
+    background-position: 30% 30%;
+    height: 250px;
+    overflow: hidden;
+  }
+
+  .btnHeader {
+    padding: 5px 3px;
+    font-size: 14px;
+    border-radius: 3px;
+  }
+}

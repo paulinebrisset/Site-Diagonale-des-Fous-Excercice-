@@ -1,0 +1,272 @@
+/****************************PARAMETRAGES GENERAUX**********************************/
+:root {
+  --bleu-principal: #27348b;
+  --rouge-principal: #e30613;
+  --jaune-principal: #fecc00;
+  --noir-principal: #0d0802;
+}
+
+@font-face {
+  font-family: "font-titre";
+  /*Il vaut mieux dire font-1 au cas où on ait envie de changement*/
+  src: url(../assets/fonts/Bebas_Neue/BebasNeue-Regular.ttf);
+}
+
+@font-face {
+  font-family: "font-paragraphe";
+  src: url(../assets/fonts/Manrope/static/Manrope-Regular.ttf);
+}
+
+* {
+  text-align: center;
+  justify-content: space-around;
+  border-radius: 5px;
+}
+
+::selection {
+  background-color: var(--bleu-principal);
+  color: white;
+}
+/*************************TITRAILLE, LIENS, BOUTONS (général)********************************/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.nav-link,
+#motMenu {
+  font-family: "font-titre", serif;
+}
+h1 {
+  font-size: 5rem;
+  font-weight: 570;
+}
+h2 {
+  color: var(--rouge-principal);
+  margin: 5vh;
+  font-size: 3rem;
+  letter-spacing: 0.05rem;
+}
+h3 {
+  color: var(--jaune-principal);
+}
+
+h3:hover {
+  color: var(--bleu-principal);
+  transition: 0.4s;
+}
+h6 {
+  margin-top: 3px;
+}
+p {
+  color: var(--noir-principal);
+  font-family: font-paragraphe;
+}
+a {
+  color: var(--rouge-principal);
+}
+a:hover {
+  color: var(--jaune-principal);
+}
+button {
+  margin: 10px auto;
+  padding: 5px;
+  min-width: 130px;
+}
+
+/*************************CARACTERISTIQUES GROS BLOCS**************/
+body {
+  scroll-behavior: smooth;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+section {
+  margin: 20px;
+}
+
+body > section {
+  scroll-snap-type: y mandatory;
+}
+
+.rubrique {
+  margin-top: 3.5em;
+}
+
+/*****************************HAUT DE PAGE ***********************************/
+/* Move down content because we have a fixed navbar that is 3.5rem tall */
+.trouvide {
+  padding-top: 100px;
+}
+.barrenavigation {
+  background-color: rgba(0, 0, 0, 0.37);
+  transition: 1s;
+}
+
+.nav-link,
+#motMenu {
+  font-size: 1.2rem;
+  letter-spacing: 0.08rem;
+}
+.jumbotron {
+  background-color: #212529;
+  background: url("../assets/img/photos/photo-motiv.png") no-repeat fixed
+    top/cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 65vh;
+  color: white;
+  text-align: center;
+  font-size: 1.8rem;
+}
+#slogan {
+  color: white;
+}
+.btnHeader {
+  padding: 5px 3px;
+  font-size: 1.1rem;
+  border-radius: 4px;
+  transition: 0.3s;
+}
+#logo {
+  max-width: 70px;
+  max-height: 72px;
+}
+/*************************CARDS 4 COURSES******************************/
+
+.card {
+  box-shadow: 0 2px 4px 0 var(--jaune-principal);
+  transition: 0.5s;
+  border-radius: 10px;
+  margin: 12px 12px;
+  align-items: center;
+}
+.card:hover {
+  box-shadow: 0 4px 16px 0 var(--bleu-principal);
+}
+
+.photocard,
+.photoChampion {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-bottom: 7px;
+}
+/***********************GESTION DES CARTES****************************/
+.carte {
+  margin: 10px;
+  min-height: 280px;
+  min-width: 110px;
+  width: 100%;
+  max-height: 50vh;
+  border-radius: 15px;
+  outline: none;
+}
+/*********Carte Contrôles************/
+.elementCache {
+  display: none;
+}
+
+.boutonscontroles {
+  margin: 15px;
+}
+.gras {
+  font-weight: 900;
+  background-color: rgba(255, 255, 255, 0.342);
+}
+
+#illustrationParcours {
+  background-image: linear-gradient(rgb(0, 0, 255, 0), rgba(85, 85, 85, 0.685)),
+    url("../assets/img/photos/sentier.png");
+  background-position: top 0px left 0px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: local;
+  border-radius: 10px;
+}
+.paraPoint {
+  color: white;
+  font-weight: 500;
+}
+h3.nomPoint:hover {
+  color: white;
+}
+.nouveauPoint {
+  padding: 10px;
+}
+
+#btnControles {
+  white-space: normal;
+}
+
+#bgcontroles {
+  background: url("../assets/img/photos/photo-depart.jpg");
+  background-position: top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height: 50vh;
+  width: 100%;
+  overflow-x: hidden;
+  color: white;
+  font-size: 1.2rem;
+  margin: 10px;
+}
+
+/******************* Tetes de course ******************/
+#courreursEnTete {
+  padding: 15px;
+}
+
+/***********CONTACT***************/
+#textepresentation {
+  padding: 25px;
+}
+.image {
+  background-repeat: no-repeat;
+  overflow-x: hidden;
+  /* float:right; */
+  height: 50vh;
+  width: 47%;
+  /* height: 50vh;
+    width:30vw; */
+  margin: 5px;
+  border-radius: 50px;
+}
+#photoIllustration1 {
+  background: url("../assets/img/photos/champion3.webp");
+  background-position: 50% 100%;
+}
+#photoIllustration2 {
+  background: url("../assets/img/photos/plusieurscourses.jpg");
+  background-position: 35% 30%;
+  width: 100%;
+  margin-left: 5px;
+  margin-bottom: 10px;
+}
+#photoIllustration3 {
+  background: url("../assets/img/photos/benevolescuisine.jpg");
+  background-position: 65% 55%;
+}
+#caption {
+  color: var(--bleu-principal);
+}
+#caption:hover {
+  color: var(--rouge-principal);
+}
+
+/******************FOOTER*******************/
+
+#piedepage {
+  background: url("https://www.grandraid-reunion.com/assets/images/bg-footer-mobile.png")
+    no-repeat 50% 0;
+  background-size: cover;
+  background-position: bottom 0;
+  color: white;
+}
+
+.icones {
+  height: 40px;
+  width: 40px;
+}
