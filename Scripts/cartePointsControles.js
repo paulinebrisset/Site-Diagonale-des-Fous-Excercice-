@@ -18,8 +18,8 @@ set view prend une latitude, longitude, 13 est la valeur du zoom par défaut */
 
 
     function initialiserCarteControles() {
-    parametrerLaCarte ();
-    recupererLesPointsDeControle();
+      parametrerLaCarte ();
+      recupererLesPointsDeControle();
     }
     function parametrerLaCarte () {
       /*******************Chargement des tuiles = couches de peinture ******************/
@@ -28,17 +28,34 @@ set view prend une latitude, longitude, 13 est la valeur du zoom par défaut */
           on lui donne une adresse vers un serveur.  Attribution : infos sur qui fournit la carte*/
           attribution:'Map <a href="https://memomaps.de/">memomaps.de</a> <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
           minZoom: 9,
-          maxZoom: 25,
+          maxZoom: 25
       }).addTo(carteCntrl);
     }
+
+
     function recupererLesPointsDeControle() {
     //on englobe le flech dans une fonction pour pouvoir l'appeler comme on veut
+    //Version contractée
+    // fetch("https://polenumerique.re/dl/dwwm2021/ws/m1s4/?q=pc")
+    //     .then((reponse) => reponse.json())
+    //     .then((dptControlesData) => (listeControles = dptControlesData)) /*https://developer.mozilla.org/fr/docs/Learn/JavaScript/Objects/JSON*/
+    //     //.then (()=> console.log(listeControles[0]))
+    //     .catch((error) => alert("Erreur : " + error));
+    // }
+    //Version plus complète
     fetch("https://polenumerique.re/dl/dwwm2021/ws/m1s4/?q=pc")
-        .then((reponse) => reponse.json())
-        .then((dptControlesData) => (listeControles = dptControlesData)) /*https://developer.mozilla.org/fr/docs/Learn/JavaScript/Objects/JSON*/
-        .then (()=> console.log(listeControles[0]))
+        .then(
+          function (reponse) { reponse.json()}
+        )
+        .then(
+          function (dptControlesData) {
+            (listeControles = dptControlesData)
+          }
+        ) /*https://developer.mozilla.org/fr/docs/Learn/JavaScript/Objects/JSON*/
+        //.then (()=> console.log(listeControles[0]))
         .catch((error) => alert("Erreur : " + error));
     }
+
 
     
     /****************PART2 - DEFINITION DES ICONES ******/
@@ -75,7 +92,7 @@ set view prend une latitude, longitude, 13 est la valeur du zoom par défaut */
 
     function remplirLaCarteControles () {  
       for (var i=(listeControles.length-1); i>-1 ; i--) {
-          marqueurControl = L.marker([listeControles[i].lat, listeControles[i].lon],
+          var marqueurControl = L.marker([listeControles[i].lat, listeControles[i].lon],
           { icon: icone }).addTo(carteCntrl);
           marqueurControl.bindPopup("<p>" +"Altitude : " +listeControles[i].Altitude+" mètres").openPopup();
       }
@@ -90,8 +107,8 @@ on ajoute une icone sur la position du poste*/
   function trouverLesMedecins() {
     for (var i=0; i<listeControles.length; i++){
         if ((listeControles[i].medecin)!=("")){ 
-        var marqueurMedecin = L.marker([listeControles[i].lat, listeControles[i].lon],
-        { icon: iconeMedecin}).addTo(carteCntrl);;
+          var marqueurMedecin = L.marker([listeControles[i].lat, listeControles[i].lon],
+          { icon: iconeMedecin}).addTo(carteCntrl);;
         }
     } 
   };
@@ -131,12 +148,3 @@ https://stackoverflow.com/questions/28646317/how-to-remove-all-layers-and-featur
     });
     initialiserCarteControles();
   };
-
-/*****************TRACE GPS******************/
-//nécessite Web Serveur For Chrome - Ne pas prendre en compte pour l'ECF
-// var gpx ="../assets/itineraire/itineraireGrandRaid.gpx";
-
-// new L.GPX(gpx, {async: true}).on('loaded', function(e) {
-//   carteCntrl.fitBounds(e.target.getBounds());
-// }).addTo(carteCntrl);
-

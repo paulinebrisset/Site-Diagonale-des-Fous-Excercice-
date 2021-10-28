@@ -61,7 +61,7 @@ h6 {
 }
 p {
   color: var(--noir-principal);
-  font-family: font-paragraphe;
+  font-family: "font-paragraphe";
 }
 a {
   color: var(--rouge-principal);
@@ -100,8 +100,8 @@ body > section {
   padding-top: 100px;
 }
 .barrenavigation {
-  background-color: rgba(0, 0, 0, 0.37);
-  transition: 1s;
+  background-color: rgba(0, 0, 0, 0.336);
+  transition: 1.5s;
 }
 
 .nav-link,
@@ -259,10 +259,10 @@ h3.nomPoint:hover {
 /******************FOOTER*******************/
 
 #piedepage {
-  background: url("https://www.grandraid-reunion.com/assets/images/bg-footer-mobile.png")
+  background: url("../assets/img/favicons/bg-footer.webp")
     no-repeat 50% 0;
   background-size: cover;
-  background-position: bottom 0;
+  position: absolute;
   color: white;
 }
 

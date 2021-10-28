@@ -2,7 +2,11 @@
 var barrenavigation = document.getElementById("barrenavigation");
 
 window.onscroll = function () {
-  if (document.documentElement.scrollTop > 200) {
+  if (document.documentElement.scrollTop <1) {
+    //documentElement = le HTML
+    barrenavigation.style.background = "rgba(0, 0, 0,  0.336)";
+  }
+  if (document.documentElement.scrollTop > 20) {
     //documentElement = le HTML
     barrenavigation.style.background = "rgba(0, 0, 0, 0.952)";
   }
@@ -11,12 +15,8 @@ window.onscroll = function () {
   }
 };
 /**************Gestion de l'impression de la liste des points de contrôle **************/
-var btnListeEcriteControles = document.getElementById(
-  "btnListeEcriteControles"
-);
-var btnReplierListeControles = document.getElementById(
-  "btnReplierListeControles"
-);
+var btnListeEcriteControles = document.getElementById("btnListeEcriteControles");
+var btnReplierListeControles = document.getElementById("btnReplierListeControles");
 var listeControles = null;
 var photoHauteur = document.getElementById("photoHauteur");
 var bgcontroles = document.getElementById("bgcontroles");
@@ -74,6 +74,7 @@ function gestionBoutonListePubliee() {
 }
 
 function gestionBoutonsListeCachee() {
+
   btnListeEcriteControles.classList.remove("elementCache");
   btnListeEcriteControles.className =
     "btn btn-outline-dark bouton btn-block gras";

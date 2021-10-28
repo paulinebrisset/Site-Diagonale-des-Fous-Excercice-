@@ -15,7 +15,7 @@ function recupererLesDonneesCoureurs () {
             .then (() => publierLesDonneesCoureurs ())
             .then (() => initialiserCarteCoureurs())
             .then (() => initialiserLesMarqueursCoureurs ())
-            .then (()=> console.log(listeChampion))
+            //.then (()=> console.log(listeChampion))
             .catch( error => alert("Oups ! Il y a une erreur, repassez plus tard"));            
 };
 
